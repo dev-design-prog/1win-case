@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: 1win-bot
+    runtime: python
+    pythonVersion: "3.11.9"
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot/main_neon.py
+    healthCheckPath: /health
+
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: NEON_CONNECTION_STRING
+        sync: false
